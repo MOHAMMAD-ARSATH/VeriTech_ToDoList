@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ToDo List</title>
+
+    <!-- Set website favicon using the provided PNG image "logo.png" -->
+    <link rel="icon" type="image/png" href="./logo.png">
+
+    <!-- Include external stylesheet "styles.css" for styling -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+
+    <!-- Font Awesome CDN for icon styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+    <div class="container">
+        <h4>ToDo List</h4>
+
+        <div class="addInput">
+            <input type="text" class="addInputField" placeholder="What do you have planned?" required>
+            <input type="hidden" class="editInputField">
+            <i class="fa-solid fa-pen"></i>
+            <button class="addTask">+</button>
+            <button class="saveTask" style="display: none;"><i class="fa-solid fa-floppy-disk"></i></button>
+        </div>
+
+        <div class="notification"></div>
+
+        <div class="btns_filter">
+            <div class="filter">
+                <input type="text" id="penTaskFilter" placeholder="Search your task here"
+                    onkeyup="filterPenTask()">
+                <input type="text" id="comTaskFilter" placeholder="Search your task here" style="display: none;"
+                    onkeyup="filterCompleteTask()">
+            </div>
+
+            <div class="btns">
+                <button class="active">Pending</button>
+                <button class="complete">Completed</button>
+                <div class="showChange"></div>
+            </div>
+        </div>
+
+        <div class="todosContainer">
+            <div class="pendingTodos">
+                <ul class="todoList pending">
+
+                </ul>
+                <div class="footer penTodos">
+                    <span>You have <span class="pendingNum">0</span> pending task.</span>
+                    <button>All Clear</button>
+                </div>
+            </div>
+
+            <div class="completeTodos" style="display: none;">
+                <ul class="todoList completeTask">
+
+                </ul>
+                <div class="footer comTodos">
+                    <span>You have completed <span class="completeNum">0</span> task.</span>
+                    <button>All Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include main JavaScript file "main.js" -->
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
